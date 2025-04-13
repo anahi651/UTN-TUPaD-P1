@@ -20,3 +20,15 @@ else:
 
 print("El número tiene", cantidad_digitos, "dígitos.")
   
+#3) Escribe un programa que sume todos los números enteros comprendidos entre dos valores
+# dados por el usuario, excluyendo esos dos valores
+numero= int(input("Ingrese un número :"))
+numero_dos= int(input("Ingrese un segundo número :"))
+suma=0
+if numero > numero_dos:
+    temp = numero           # guarda el mayor
+    numero = numero_dos     # poguarda  el menor en numero
+    numero_dos = temp       # y guarda el mayor en numero_dos
+for x in range (numero+1 , numero_dos):
+    suma +=x #suma=suma +x
+print("La suma de los números entre", numero, "y", numero_dos, "es:", suma)
