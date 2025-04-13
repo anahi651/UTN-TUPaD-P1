@@ -69,3 +69,72 @@ print("La cantidad de intentos necesarios para adivinar el número fue:", suma +
 
 for x in range(100,-1,-2):# inicia en 100,hasta -1 sin incluir (0) y va de dos en dos en forma decreciente para tomar los pares
     print(x)
+
+
+#7) Crea un programa que calcule la suma de todos los números comprendidos entre 0 y un
+#número entero positivo indicado por el usuario.
+numero= int(input("Ingresar un número entero: "))#se solicita numero
+suma=0 # se inicializa la variable suma 
+
+for x in range(0,numero+1): # se suma uno porque no para que incluya el número indicado
+    suma+=x
+print("La suma de los numeros ingresados entre 0 y ", numero, "es de:", suma)
+
+#8) Escribe un programa que permita al usuario ingresar 100 números enteros. Luego, el
+#programa debe indicar cuántos de estos números son pares, cuántos son impares, cuántos son
+#negativos y cuántos son positivos. 
+
+
+numeros_pares=0
+numeros_impares=0
+numeros_negativos=0
+numeros_positivos=0
+
+for x in range(1,101): # Se piden 100 números
+    numero=int(input("Ingrese un número entero: "))
+    if numero % 2==0:
+        numeros_pares+=1
+    else:
+        numeros_impares+=1
+    if numero>0:
+        numeros_positivos+=1
+    else:
+        numeros_negativos+=1
+    
+    
+
+print("La cantidad de numeros pares es de:", numeros_pares)
+print( "la cantidad de números impares es de :", numeros_impares)
+print("La cantidad de números positivos es de:", numeros_positivos)
+print("La cantidad de números negativos es de :", numeros_negativos)
+
+
+#9) Elabora un programa que permita al usuario ingresar 100 números enteros y luego calcule la
+#media de esos valores.
+
+
+
+total=0 #Variable para acumular la suma de los números
+for x in range(1,101):
+    numero=int(input("Ingrese un numero: ")) # Solicitar al usuario que ingrese un número
+    total+=numero                            #se suma el numero ingresado al total 
+media=total/100                              #la suma total entre 100
+print("La media de los números ingresados es de:",media)
+
+#10Escribe un programa que invierta el orden de los dígitos de un número ingresado por el
+#usuario. Ejemplo: si el usuario ingresa 547, el programa debe mostrar 745.
+
+
+numero=(input("Ingrese número a invertir:"))
+
+numero_invertido = ""# inicializo la variable
+
+
+for i in range(len(numero) - 1, -1, -1):# recorro de atras para adelante len devuelve la longitud de la cadena.
+    numero_invertido += numero[i]         # accede al carácter de la cadena numero en la posición i y se agraga a la variable
+
+
+print("El número invertido es:", numero_invertido)
+
+
+
