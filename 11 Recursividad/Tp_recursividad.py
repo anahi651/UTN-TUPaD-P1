@@ -127,3 +127,40 @@ n=int(input("Ingrese número entero positivo:"))
 
 
 print(f"La suma de los digitos de {n} es de : {suma_digitos(n)}")
+
+
+#7) Un niño está construyendo una pirámide con bloques. En el nivel más bajo coloca n bloques, en el siguiente nivel uno menos (n - 1), y así sucesivamente hasta llegar al 
+#último nivel con un solo bloque.Escribí una función recursiva contar_bloques(n) que reciba el número de bloques en el nivel más bajo y devuelva el total de bloques que 
+# necesita para construir toda la pirámide. Ejemplos:
+#contar_bloques(1) → 1 (1)
+#contar_bloques(2) → 3 (2 + 1)
+#contar_bloques(4) → 10 (4 + 3 + 2 + 1)
+
+
+def contar_bloques(n):
+    if n == 1:          # caso base: si queda un solo nivel, se necesita 1 bloque
+        return 1
+    else:
+        return n + contar_bloques(n - 1)  # suma el nivel actual y llama con uno menos
+
+nivel = int(input("Ingrese la cantidad de bloques en el nivel más bajo: "))
+print(f"Total de bloques necesarios: {contar_bloques(nivel)}")
+
+#8)Escribí una función recursiva llamada contar_digito(numero, digito) que reciba un número entero positivo (numero) y un dígito (entre 0 y 9), y devuelva cuántas veces 
+# aparece ese dígito dentro del número.Ejemplos:
+#contar_digito(12233421, 2) → 3 
+#contar_digito(5555, 5) → 4 
+
+def contar_digito(numero, digito):
+    if numero == 0:  # Caso base: ya no quedan más dígitos
+        return 0
+    else:
+        ultimo = numero % 10  # Tomamos el último dígito
+        if ultimo == digito:
+            return 1 + contar_digito(numero // 10, digito)  # Si coincide, sumamos 1
+        else:
+            return contar_digito(numero // 10, digito)  # Si no, solo seguimos
+        
+numero = int(input("Ingrese número entero positivo: "))
+digito=int(input(f"Ingrese digito que quiera buscar en el {numero} :"))
+print(f"Total de veces que aparece el digito: {contar_digito(numero,digito)}")
